@@ -6,6 +6,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
+// Authentication  Module
 Route::view('/login', 'auth.login');
 Route::post('/login', function (Request $request) {
     // Temporarily just return input for testing
@@ -14,8 +16,20 @@ Route::post('/login', function (Request $request) {
 
 Route::view('/register', 'auth.register');
 
-Route::view('/dashboard', 'dashboard.index');
-Route::view('/renters', 'dashboard.renters');
-Route::view('/shelves', 'dashboard.shelves');
-Route::view('/inventory', 'dashboard.inventory');
-Route::view('/audit-logs', 'dashboard.audit-logs');
+
+
+// Admin  Routes
+Route::view('/dashboard', 'admin.index');
+Route::view('/renters', 'admin.renters');
+Route::view('/shelves', 'admin.shelves');
+Route::view('/inventory', 'admin.inventory');
+Route::view('/audit-logs', 'admin.audit-logs');
+
+// Renters  Routes
+Route::view('/myshelf', 'renter.myshelf')->name('myshelf');
+Route::view('/inventoryrqst', 'renter.inventoryrqst')->name('inventoryrqst');
+
+
+// Staff  Routes
+Route::view('/sdashboard', 'staff.index')->name('staff.dashboard');
+

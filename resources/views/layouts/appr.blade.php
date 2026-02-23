@@ -35,7 +35,7 @@
   <div class="app-container minimal-app">
     
     {{-- Sidebar --}}
-    @include('partials.asidebar')
+    @include('partials.rsidebar')
 
     {{-- Main content area --}}
     <main class="content">

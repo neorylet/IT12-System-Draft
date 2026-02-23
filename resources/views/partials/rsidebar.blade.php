@@ -103,29 +103,21 @@
         <div class="logo-section">
             <img src="{{ asset('images/whateverlogo.jpg') }}" alt="Logo" class="logo-img">
             <div class="user-name">FirstName</div>
-            <div class="user-role">Staff Member</div>
+            <div class="user-role">Hello Renter</div>
         </div>
 
         <nav class="nav-group">
-            <a href="/dashboard" class="nav-link {{ request()->is('dashboard') ? 'active' : '' }}">
-                <span class="nav-icon">📊</span> Dashboard
+            
+
+        <a href="{{ route('myshelf') }}" 
+           class="nav-link {{ request()->routeIs('myshelf') ? 'active' : '' }}">
+           <span class="nav-icon">🗂️</span> View my Shelf
+        </a>
+
+            <a href="/inventoryrqst" class="nav-link {{ request()->is('submit') ? 'active' : '' }}">
+                <span class="nav-icon">📝</span> Submit Stock
             </a>
 
-            <a href="/shelves" class="nav-link {{ request()->is('shelves') ? 'active' : '' }}">
-                <span class="nav-icon">🗂️</span> Shelves
-            </a>
-
-            <a href="/inventory" class="nav-link {{ request()->is('inventory') ? 'active' : '' }}">
-                <span class="nav-icon">📦</span> Inventory
-            </a>
-
-            <a href="/renters" class="nav-link {{ request()->is('renters') ? 'active' : '' }}">
-                <span class="nav-icon">👤</span> Renters
-            </a>
-
-            <a href="/audit-logs" class="nav-link {{ request()->is('audit-logs') ? 'active' : '' }}">
-                <span class="nav-icon">📝</span> Audit Logs
-            </a>
         </nav>
     </div>
 
