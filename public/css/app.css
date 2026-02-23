@@ -1,0 +1,428 @@
+/* Boutique Login Page */
+body {
+    font-family: 'Georgia', serif;
+    margin: 0;
+    padding: 0;
+}
+
+.boutique-bg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #fbe6e6, #ffeedd);
+}
+
+.boutique-card {
+    background-color: #fffaf0;
+    padding: 3rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    width: 380px;
+    text-align: center;
+}
+
+.login-title {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: #5d3a00;
+}
+
+.login-subtitle {
+    font-size: 0.9rem;
+    color: #8c5c3c;
+    margin-bottom: 1.5rem;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #5d3a00;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border-radius: 6px;
+    border: 1px solid #d6a77a;
+}
+
+.btn-login.boutique-btn {
+    width: 100%;
+    padding: 0.7rem;
+    margin-top: 1rem;
+    background-color: #d6a77a;
+    border: none;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-login.boutique-btn:hover {
+    background-color: #c18f5f;
+}
+
+.register-text {
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #5d3a00;
+}
+
+.btn-register.boutique-link {
+    color: #d6a77a;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 0.3rem;
+}
+
+.btn-register.boutique-link:hover {
+    text-decoration: underline;
+}
+
+
+
+/* App container: sidebar + main content */
+.minimal-app {
+    display: flex;
+    min-height: 100vh;
+    font-family: 'Segoe UI', sans-serif; /* clean professional font */
+    background-color: #f9f9f9; /* soft light background */
+}
+
+/* Sidebar */
+.sidebar {
+    width: 220px;
+    background-color: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.sidebar a {
+    display: block;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.5rem;
+    color: #4a4a4a;
+    font-weight: 500;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.sidebar a:hover {
+    background-color: #d6a77a; /* boutique accent color */
+    color: #fff;
+}
+
+/* Main content area */
+.content {
+    flex: 1;
+    padding: 2.5rem 3rem;
+}
+
+/* Responsive: collapse sidebar on small screens */
+@media screen and (max-width: 768px) {
+    .minimal-app {
+        flex-direction: column;
+    }
+    .sidebar {
+        width: 100%;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 1rem;
+    }
+    .sidebar a {
+        margin-right: 0.5rem;
+        margin-bottom: 0;
+    }
+    .content {
+        padding: 1.5rem;
+    }
+}
+
+/* Dashboard Specific Styles */
+.header-section h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: #5d3a00;
+    margin-bottom: 2rem;
+}
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.stat-card {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(93, 58, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: #d6a77a;
+}
+
+.stat-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #8c5c3c;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+}
+
+.stat-value {
+    font-size: 1.75rem;
+    font-weight: 600;
+    color: #5d3a00;
+}
+
+.activity-section {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.activity-header {
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    color: #5d3a00;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    padding-bottom: 0.75rem;
+}
+
+.activity-table {
+    width: 100%;
+    table-layout: fixed; /* This forces equal column widths */
+    border-collapse: collapse;
+}
+
+.activity-table th, 
+.activity-table td {
+    width: auto; /* Distributes remaining space equally */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 10px; /* Optional: for better spacing */
+}
+
+/* Container for the scrollable area */
+.activity-table-scrollable {
+    max-height: 450px; /* Adjust this to your preferred height */
+    overflow-y: auto;
+    border-radius: 0 0 12px 12px;
+}
+
+/* Fix headers to the top while scrolling */
+.activity-table-scrollable thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ffffff;
+    z-index: 2;
+    box-shadow: inset 0 -1px 0 #e0e0e0; /* Subtle line under sticky header */
+}
+
+/* Boutique Styled Scrollbar */
+.activity-table-scrollable::-webkit-scrollbar {
+    width: 6px;
+}
+
+.activity-table-scrollable::-webkit-scrollbar-track {
+    background: #fcfaf8;
+}
+
+.activity-table-scrollable::-webkit-scrollbar-thumb {
+    background: #d6a77a; /* Matches your boutique accent color */
+    border-radius: 10px;
+}
+
+.activity-table-scrollable::-webkit-scrollbar-thumb:hover {
+    background: #c18f5f;
+}
+
+.empty-state {
+    font-size: 0.85rem;
+    color: #94a3b8;
+    font-style: italic;
+}
+
+    .stat-footer {
+        font-size: 0.65rem; /* Reduced size for a smaller, cleaner look */
+        color: #94a3b8;
+        margin-top: 0.5rem;
+    }
+
+
+/* Shelves CSS */
+:root {
+    --boutique-accent: #d6a77a;
+    --boutique-dark: #5d3a00;
+    --boutique-text: #8c5c3c;
+    --boutique-bg: #fcfaf8;
+}
+
+/* Header & Actions */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.header-section h1 {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    color: var(--boutique-dark);
+    margin: 0;
+}
+
+.btn-add {
+    background-color: var(--boutique-dark);
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: 1px solid var(--boutique-dark);
+}
+
+.btn-add:hover {
+    background-color: var(--boutique-text);
+    border-color: var(--boutique-text);
+    transform: translateY(-1px);
+}
+
+/* Table Container */
+.shelves-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 4px 12px rgba(93, 58, 0, 0.05);
+    overflow-x: auto;
+}
+
+.shelves-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.shelves-table th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--boutique-text);
+    font-weight: 600;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--boutique-bg);
+}
+
+.shelves-table td {
+    padding: 1rem;
+    border-bottom: 1px solid #f3f4f6;
+    vertical-align: middle;
+    color: var(--boutique-dark);
+}
+
+.shelves-table tr:hover {
+    background-color: var(--boutique-bg);
+}
+
+/* Typography & Badges */
+.shelf-code {
+    font-weight: 700;
+    color: var(--boutique-dark);
+    font-family: monospace;
+    font-size: 1rem;
+}
+
+.renter-name {
+    font-size: 0.9rem;
+    color: var(--boutique-text);
+}
+
+.badge {
+    padding: 0.35rem 0.85rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.status-occupied { 
+    background-color: #fef3c7; 
+    color: #92400e; 
+}
+
+.status-vacant { 
+    background-color: #dcfce7; 
+    color: #166534; 
+}
+
+.status-maintenance { 
+    background-color: #fee2e2; 
+    color: #991b1b; 
+}
+
+/* Actions */
+.action-links a {
+    color: var(--boutique-accent);
+    text-decoration: none;
+    margin-right: 1rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+.action-links a:hover {
+    color: var(--boutique-dark);
+    text-decoration: underline;
+}
+
+/* Responsive Table */
+@media (max-width: 768px) {
+    .header-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+    
+    .shelves-table th, 
+    .shelves-table td {
+        padding: 0.75rem 0.5rem;
+        font-size: 0.8rem;
+    }
+}
+
